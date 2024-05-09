@@ -10,6 +10,27 @@
     <h1>Olá, Mundo!</h1>
 
     <p>Este é um parágrafo simples em uma página HTML.</p>
-
+    
 </body>
+    <script>
+        // Função para registrar cliques
+        function registrarClique(elemento) {
+            // Obtém o ID do elemento clicado
+            var idElemento = elemento.id;
+            
+            // Cria um objeto Date para obter a data e a hora atuais
+            var dataHoraAtual = new Date();
+            
+            // Formata a data e a hora para exibição amigável
+            var dataHoraFormatada = dataHoraAtual.toLocaleString();
+            
+            // Adiciona uma nova linha à tabela de cliques
+            var tabelaCliques = document.getElementById("tabelaCliques").getElementsByTagName('tbody')[0];
+            var novaLinha = tabelaCliques.insertRow();
+            var colunaId = novaLinha.insertCell(0);
+            var colunaDataHora = novaLinha.insertCell(1);
+            colunaId.innerHTML = idElemento;
+            colunaDataHora.innerHTML = dataHoraFormatada;
+        }
+    </script>
 </html>
